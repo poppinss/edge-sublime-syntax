@@ -1,0 +1,22 @@
+{
+    "schema_version": "3.0.0",
+    "packages": [
+        {
+            "name": "Edge Syntax Highliter",
+            "description": "Sublime Syntax Highliter For Edge.js.",
+            "author": "Aman Virk",
+            "homepage": "https://github.com/poppinss/edge-sublime-syntax",
+            "details": "https://github.com/poppinss/edge-sublime-syntax",
+            "labels": ["js", "adonis", "edge", "language syntax"],
+            "releases": [
+                {
+                    "sublime_text": ">3084",
+                    "platforms": ["windows", "osx", "linux"],
+                    "version": "1.0.1",
+                    "url": "https://github.com/poppinss/edge-sublime-syntax/archive/1.0.1.zip",
+                    "date": "2017-03-31 12:29:00"
+                }
+            ]
+        }
+    ]
+}
