@@ -1,0 +1,18 @@
+{
+   "scope": "text.edge",
+   "completions":
+   [
+      { "trigger": "inc\tlude", "contents": "@include('${1:partials.${2:partial}}')" },
+      { "trigger": "lay\tout", "contents": "@layout('${1:layouts.${2:master}}')" },
+      { "trigger": "com\tponent", "contents": "@component('${1:components.${2:name}}')\n@endcomponent" },
+      { "trigger": "lsec\ttion", "contents": "@section('${1:name}')\n  $2\n@endsection" },
+      { "trigger": "if", "contents": "@if(${1:condition})\n  $2\n@endif" },
+      { "trigger": "elif", "contents": "@if(${1:condition})\n  $2\n@else\n  $3\n@endif" },
+      { "trigger": "ele\tif", "contents": "@if(${1:condition})\n  $2\n@elseif(${3:codition})\n  $4\n@endif" },
+      { "trigger": "each", "contents": "@each(${1:row} in ${2:rows})\n  $3\n@endeach" },
+      { "trigger": "eain", "contents": "@!each(${1:row} in ${2:rows}, include = '$3')" },
+      { "trigger": "deb\tugger", "contents": "@debugger" },
+      { "trigger": "sup\ter", "contents": "@super" },
+      { "trigger": "raw", "contents": "@raw\n  $1\n@endraw" }
+   ]
+}

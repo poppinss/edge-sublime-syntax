@@ -1,0 +1,7 @@
+Edge Syntax Highlighter
+
+This package adds syntax definitions for the Edge templating engine. 
+
+Learn more at http://edge.adonisjs.com
+
+Works with Sublime Text 3.

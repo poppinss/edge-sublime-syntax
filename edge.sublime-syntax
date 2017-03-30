@@ -1,0 +1,69 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+
+name: Edge
+file_extensions: [edge, edge.html]
+scope: text.edge
+contexts:
+  main:
+    - match: ""
+      push:
+        - include: 'scope:text.html.basic'
+        - meta_scope: text.html
+          pop: true
+
+      with_prototype:
+        - match: "{{--"
+          captures:
+            0: punctuation.definition.comment.begin.edge
+          push:
+            - meta_scope: comment.block.html
+            - match: "--}}"
+              scope: punctuation.definition.comment.end.edge
+              pop: true
+
+        - match: "@raw"
+          captures:
+            0: keyword.other.function
+          push:
+            - include: 'scope:text.html.basic'
+            - match: "@endraw"
+              scope: keyword.other.function
+              pop: true
+
+        - match: ^\s*(@(!)?\w+)\(
+          captures:
+            1: keyword.other.function
+          
+          push: Packages/JavaScript/JavaScript.sublime-syntax
+          with_prototype:
+            - match: (\w+)\s=[^=]
+              captures:
+                1: keyword.operator.assignment
+
+            - match: "(?=\\))"
+              pop: true
+
+        - match: \@debugger|\@super
+          scope: keyword.operator.js
+
+        - match: ^\s*(\@end\w+)|\@else(if)?
+          scope: keyword.other.function
+              
+        - match: "{{{?"
+          scope: entity.name.tag
+          push: Packages/JavaScript/JavaScript.sublime-syntax
+          with_prototype:
+            - match: "(?=}})"
+              pop: true
+
+        - match: "}}}?"
+          scope: entity.name.tag
+
+        - match: \(.+(in)
+          captures:
+            1: keyword.operator.word
+
+        - match: \@{{\s*(.+?)\s*}}}?
+          scope: variable.other
