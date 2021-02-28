@@ -1,3 +1,6 @@
+## ⚠️🚨 Deprecated. See https://github.com/edge-js/edge-sublime instead 
+
+
 # Edge Syntax Highlighter
 
 This package adds syntax highligting for [Edge](http://edge.adonisjs.com) templating engine. 
